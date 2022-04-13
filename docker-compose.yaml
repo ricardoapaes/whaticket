@@ -20,6 +20,7 @@ services:
       - FRONTEND_URL=${FRONTEND_URL:-http://localhost:3000}
       - PROXY_PORT=${PROXY_PORT:-8080}
       - CHROME_ARGS=--no-sandbox --disable-setuid-sandbox
+      - SENTRY_DSN=${SENTRY_DSN}
     ports:
       - ${BACKEND_PORT:-8080}:3000
     volumes:
