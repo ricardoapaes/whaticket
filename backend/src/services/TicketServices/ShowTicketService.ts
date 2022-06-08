@@ -3,6 +3,7 @@ import AppError from "../../errors/AppError";
 import Contact from "../../models/Contact";
 import User from "../../models/User";
 import Queue from "../../models/Queue";
+import Whatsapp from "../../models/Whatsapp";
 
 const ShowTicketService = async (id: string | number): Promise<Ticket> => {
   const ticket = await Ticket.findByPk(id, {
@@ -21,8 +22,17 @@ const ShowTicketService = async (id: string | number): Promise<Ticket> => {
       {
         model: Queue,
         as: "queue",
+<<<<<<< HEAD
         attributes: ["id", "name", "color"],
         include: ["dialogflow"]
+=======
+        attributes: ["id", "name", "color"]
+      },
+      {
+        model: Whatsapp,
+        as: "whatsapp",
+        attributes: ["name"]
+>>>>>>> 07af495938b5688d2219af7140009f5c93d2c32a
       }
     ]
   });
